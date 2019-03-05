@@ -33,16 +33,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Pong!'
                 });
             break;
-            }
-            switch(cmd) {
-                case 'cum':
-                    bot.sendMessage({
-                        to: channelID,
-                        message: 'yo i just cummed'
-                    })
-            }
 
+            
             // Just add any case commands if you want to..
+         }
+         switch(cmd) {
+             case 'cream':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'cream'
+                });
+                break;
          }
      }
 });
