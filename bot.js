@@ -4,6 +4,7 @@
 //Image manipulation
 //
 
+
 var Discord = require("discord.io");
 var logger = require("winston");
 var auth = require("./auth.json");
@@ -50,12 +51,9 @@ bot.on("message", function(user, userID, channelID, message, evt) {
         break;
     }
 
-    
-        const channel = client.channels.get("210915121734615040");
-        if (cmd = "join") {
-            channel.join();
-            console.log("it worked woo");
-        }
+
+        
+        
 
 
     }
