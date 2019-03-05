@@ -3,60 +3,17 @@
 //Music integration
 //Image manipulation
 //
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
-
-var Discord = require("discord.io");
-var logger = require("winston");
-var auth = require("./auth.json");
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console(), {
-  colorize: true
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
-logger.level = "debug";
-// Initialize Bot
-var bot = new Discord.Client({
-  token: auth.token,
-  autorun: true
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('pong');
+  }
 });
-bot.on("ready", function(evt) {
-  logger.info("Connected");
-  logger.info("Logged in as: ");
-  logger.info(bot.username + " - (" + bot.id + ")");
-});
-bot.on("message", function(user, userID, channelID, message, evt) {
-  //listens for a command starting with '.'
-  if (message.substring(0, 1) == ".") {
-    var args = message.substring(1).split(" ");
-    var cmd = args[0];
 
-    args = args.splice(1);
-
-    //default test case .ping
-    switch (cmd) {
-      case "ping":
-        bot.sendMessage({
-          to: channelID,
-          message: "Pong!"
-        });
-        break;
-
-    }
-    switch (cmd) {
-      case "cream":
-        bot.sendMessage({
-          to: channelID,
-          message: "cream"
-        });
-        break;
-    }
-
-
-        
-        
-
-
-    }
-    }
-  ,
-);
+client.login('NTUyMzk1MDY3MzUyOTQwNTU5.D1--Yw.ljX_sUFUeKIFhSkLmI5m6u5zmgM');
