@@ -49,11 +49,16 @@ bot.on("message", function(user, userID, channelID, message, evt) {
         });
         break;
     }
-    switch(cmd) {
-        case "numbers":
-        client.playSound("/assets/media/test.mp3");
-        break;
+
+    
+        const channel = client.channels.get("210915121734615040");
+        if (cmd = "join") {
+            channel.join();
+            console.log("it worked woo");
+        }
+
+
     }
     }
-  }
-,);
+  ,
+);

@@ -6,6 +6,8 @@
     "author": "Spencer Hewitt",
     "dependencies": {
         "discord.io": "github:woor/discord.io#gateway_v6",
+        "discord.js": "^11.4.2",
+        "ffmpeg": "0.0.4",
         "winson": "^1.0.0",
         "winston": "^3.2.1"
     }
