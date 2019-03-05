@@ -1,0 +1,12 @@
+{
+    "name": "SpencieBot",
+    "version": "1.0",
+    "description": "A discord bot project for the 'Le Anime' Discord",
+    "main": "bot.js",
+    "author": "Spencer Hewitt",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "winson": "^1.0.0",
+        "winston": "^3.2.1"
+    }
+}
