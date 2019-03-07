@@ -1,3 +1,4 @@
+import { Auth } from './auth'
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -20,4 +21,4 @@ client.on('channel', msg => {
   }
 });
 
-client.login(auth.ts);
+client.login(auth.token);
