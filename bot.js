@@ -1,5 +1,6 @@
-import { Auth } from './auth'
+
 const Discord = require('discord.js');
+const auth = require('./auth');
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -20,5 +21,6 @@ client.on('channel', msg => {
       .catch(console.error)
   }
 });
-
+ 
+ 
 client.login(auth.token);
