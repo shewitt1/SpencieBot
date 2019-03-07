@@ -18,13 +18,16 @@ client.on('message', msg => {
   }
 });
 
-client.on('channel', msg => {
-  if(msg.content === 'join') {
-    msg.reply('Joined Channel')
-    voiceChannel.join()
-      .then(connection => console.log('connected'))
-      .catch(console.error)
-  }
+client.on("ready", () => {
+  const channel = client.channels.get("499653051884240907");
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    // Yay, it worked!
+    console.log("Successfully connected.");
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
 });
 
 client.on('message', message => {
