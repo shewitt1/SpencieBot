@@ -1,8 +1,3 @@
-//TODO:
-//Make/add icons to bot
-//Music integration
-//Image manipulation
-//
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -11,9 +6,18 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+  if (msg.content === 'peen') {
+    msg.reply('ween');
   }
 });
 
-client.login("");
+client.on('channel', msg => {
+  if(msg.content === 'join') {
+    msg.reply('Joined Channel')
+    voiceChannel.join()
+      .then(connection => console.log('connected'))
+      .catch(console.error)
+  }
+});
+
+client.login(auth.ts);
