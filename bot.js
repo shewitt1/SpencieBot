@@ -8,8 +8,13 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+  switch(msg.content){
+	case 'ping':
+		msg.reply('pong');
+		break;
+	case'gnome':
+		msg.reply('https://www.youtube.com/watch?v=z-zxaKQfW6s');
+		break;
   }
 });
 
