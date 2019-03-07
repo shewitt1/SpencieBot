@@ -8,19 +8,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'peen') {
-    msg.reply('ween');
+  if (msg.content === 'ping') {
+    msg.reply('pong');
   }
 });
 
-client.on('channel', msg => {
-  if(msg.content === 'join') {
-    msg.reply('Joined Channel')
-    voiceChannel.join()
-      .then(connection => console.log('connected'))
-      .catch(console.error)
-  }
-});
+
  
  
 client.login(auth.token);
