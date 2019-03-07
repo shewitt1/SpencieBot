@@ -18,8 +18,8 @@ client.on('message', msg => {
   }
 });
 
-client.on("ready", () => {
-  const channel = client.channels.get("499653051884240907");
+client.on("message", message => {
+  const channel = message.member.voiceChannel;
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
     // Yay, it worked!
