@@ -12,6 +12,7 @@
         "ffmpeg": "0.0.4",
         "node-opus": "^0.3.1",
         "winson": "^1.0.0",
-        "winston": "^3.2.1"
+        "winston": "^3.2.1",
+        "ytdl-core": "^0.29.1"
     }
 }
