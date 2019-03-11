@@ -9,28 +9,48 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   switch(msg.content){
-	case 'ping':
+	case '$ping':
 		msg.reply('pong');
-		break;
-	case'gnome':
-		msg.reply('https://www.youtube.com/watch?v=z-zxaKQfW6s');
 		break;
   }
 });
 
 client.on("message", message => {
   const channel = message.member.voiceChannel;
-  if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
-    // Yay, it worked!
-    console.log("Successfully connected.");
-  }).catch(e => {
-    // Oh no, it errored! Let's log it to console :)
-    console.error(e);
+
+if (message == '$join') {
+    if (!channel) return console.error("The channel does not exist!");
+    channel.join().then(connection => {
+      // Yay, it worked!
+      console.log("Successfully connected.");
+    }).catch(e => {
+      // Oh no, it errored! Let's log it to console :)
+      console.error(e);
+    });
+  }
+
+  if (message == '$disconnect') {
+    channel.destroy().then(connection => {
+        console.log('Disconnected')
+
+    }).catch(e => {
+      console.error(e);
+    });
+    }
+    
+
   });
+  
+
+  
+
+
+/*client.on("message", message => {
+  const channel = message.member.voiceChannel;
+  voiceChannel.disconnect()
 });
 
-client.on('message', message => {
+/* client.on('message', message => {
   
   if (message.content === 'it is time to stop') {
       
@@ -40,6 +60,7 @@ client.on('message', message => {
   }
 });
 
+*/
  
  
 client.login(auth.token);
