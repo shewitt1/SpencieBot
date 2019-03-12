@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js');
 const auth = require('./auth');
 const { Client, Attachment } = require('discord.js');
@@ -23,8 +22,6 @@ client.on('message', message => {
 
 
 
-
-
 client.on("message", message => {
 const channel = message.member.voiceChannel;
 if (message == '$join') {
@@ -37,8 +34,6 @@ if (message == '$join') {
   }
 
 });
-
-
 
 
 client.on("message", message => {
@@ -59,18 +54,16 @@ channel.join()
 });
 
 
-
-
-
 client.on("message", message => {
 const channel = message.member.voiceChannel;
+const connection = client.voiceChannel;
 if (message == '$disconnect') {
-channel.disconnect();
-
+message.guild.voiceConnection.disconnect();
+console.log('Disconnected from channel')
 }
-  });
+});
+  
 
 
- 
  
 client.login(auth.token);
