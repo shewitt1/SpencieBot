@@ -42,7 +42,7 @@ const channel = message.member.voiceChannel;
 if (message == '$gnome') {
 channel.join()
   .then(connection => {
-    const stream = ytdl('https://www.youtube.com/watch?v=z-zxaKQfW6s', { filter : 'audioonly' });
+    const stream = ytdl('https://www.youtube.com/watch?v=t3Ownw6qX4Q', { filter : 'audioonly' });
     const dispatcher = connection.playStream(stream, streamOptions);
     const attachment = new Attachment('https://i.ytimg.com/vi/z-zxaKQfW6s/maxresdefault.jpg');
       
